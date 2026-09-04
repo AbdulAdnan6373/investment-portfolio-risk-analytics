@@ -12,7 +12,7 @@ flowchart LR
 
 ## Dashboard
 
-![Investment Portfolio Risk Dashboard](docs/dashboard.png)
+![Investment Portfolio Risk Dashboard](dashboard.png)
 
 The dashboard presents total portfolio value, active portfolio accounts, number of securities, largest position, exposure by sector and asset type, and security-level exposure details.
 
@@ -55,29 +55,26 @@ This pipeline validates the data, separates rejected records, calculates current
 ~~~text
 investment-portfolio-risk-analytics/
 ├── README.md
-├── notebooks/
-│   └── investment_portfolio_pipeline.ipynb
-├── sql/
-│   ├── 01_setup_and_bronze.sql
-│   ├── 02_silver_transformations.sql
-│   ├── 03_gold_analytics.sql
-│   └── 04_dashboard_queries.sql
-└── docs/
-    ├── dashboard.png
-    └── interview-guide.md
+├── investment_portfolio_pipeline.ipynb
+├── 01_setup_and_bronze.sql
+├── 02_silver_transformations.sql
+├── 03_gold_analytics.sql
+├── 04_dashboard_queries.sql
+├── dashboard.png
+└── interview-guide.md
 ~~~
 
 ## How to run
 
-1. Import notebooks/investment_portfolio_pipeline.ipynb into Databricks.
+1. Import investment_portfolio_pipeline.ipynb into Databricks.
 2. Attach serverless or SQL compute with permission to create catalogs and Delta tables.
 3. Run the notebook cells in order.
-4. Run sql/04_dashboard_queries.sql to create the dashboard datasets.
+4. Run 04_dashboard_queries.sql to create the dashboard datasets.
 5. Build or refresh the Databricks dashboard from those datasets.
 
 The code uses CREATE OR REPLACE TABLE, so rerunning it replaces the project tables.
 
-For interview practice, see [docs/interview-guide.md](docs/interview-guide.md).
+For interview practice, see [interview-guide.md](interview-guide.md).
 
 ## Data-quality checks
 
